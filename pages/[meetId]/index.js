@@ -32,7 +32,7 @@ export async function getStaticPaths() {
     clinet.close();
 
     return {
-        fallback: false,
+        fallback: 'blocking',// true / 'blocking' / false
         paths: meetups.map(meetup => ({
             params: {
                 meetId: meetup._id.toString()
